@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <View
+        android:id="@+id/topBg"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@android:color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="精选阅读"
+        android:textColor="@color/text_title"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/topBg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/btnSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:background="@drawable/bg_primary_button"
+        android:gravity="center"
+        android:paddingHorizontal="6dp"
+        android:text="趣读识词"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/topBg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="14dp" />
+
+    <View
+        android:id="@+id/bottomBg"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:background="@android:color/white"
+        android:elevation="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCategory"
+        android:layout_width="88dp"
+        android:layout_height="0dp"
+        android:background="@color/bg_left"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toTopOf="@id/bottomBg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topBg" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvDifficulity"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:paddingEnd="6dp"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toTopOf="@id/swipeRefresh"
+        app:layout_constraintLeft_toRightOf="@id/tvDifficulityD"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="2dp"
+        app:layout_constraintTop_toBottomOf="@id/topBg" />
+
+
+    <TextView
+        android:id="@+id/tvDifficulityD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:background="@color/white"
+        android:text="难度值:"
+        android:textColor="@color/text_title"
+        android:textSize="15sp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/rvDifficulity"
+        app:layout_constraintLeft_toRightOf="@id/rvCategory"
+        app:layout_constraintTop_toTopOf="@id/rvDifficulity" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomBg"
+        app:layout_constraintLeft_toRightOf="@id/rvCategory"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rvDifficulity">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvArticle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:overScrollMode="never"/>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <TextView
+        android:id="@+id/tabHome"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:drawableTop="@drawable/ic_home"
+        android:drawablePadding="2dp"
+        android:gravity="center"
+        android:text="首页"
+        android:textColor="@color/text_sub"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@id/bottomBg"
+        app:layout_constraintEnd_toStartOf="@id/tabListen"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/bottomBg" />
+
+    <TextView
+        android:id="@+id/tabListen"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:drawableTop="@drawable/ic_headphone"
+        android:drawablePadding="2dp"
+        android:gravity="center"
+        android:text="听力"
+        android:textColor="@color/text_sub"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@id/bottomBg"
+        app:layout_constraintEnd_toStartOf="@id/tabLibrary"
+        app:layout_constraintStart_toEndOf="@id/tabHome"
+        app:layout_constraintTop_toTopOf="@id/bottomBg" />
+
+    <TextView
+        android:id="@+id/tabLibrary"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:drawableTop="@drawable/ic_list"
+        android:drawablePadding="2dp"
+        android:gravity="center"
+        android:text="文库"
+        android:textColor="@color/brand_blue"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/bottomBg"
+        app:layout_constraintEnd_toStartOf="@id/tabMine"
+        app:layout_constraintStart_toEndOf="@id/tabListen"
+        app:layout_constraintTop_toTopOf="@id/bottomBg" />
+
+    <TextView
+        android:id="@+id/tabMine"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:drawableTop="@drawable/ic_smile"
+        android:drawablePadding="2dp"
+        android:gravity="center"
+        android:text="我的"
+        android:textColor="@color/text_sub"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@id/bottomBg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tabLibrary"
+        app:layout_constraintTop_toTopOf="@id/bottomBg" />
+</androidx.constraintlayout.widget.ConstraintLayout>

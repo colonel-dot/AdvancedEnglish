@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- 页面主色 -->
+    <color name="brand_blue">#1E88E5</color>
+    <color name="brand_blue_dark">#1565C0</color>
+    <color name="accent_orange">#FF9800</color>
+    <color name="accent_orange_light">#FFB74D</color>
+
+    <!-- 文字 -->
+    <color name="text_title">#202124</color>
+    <color name="text_sub">#9AA0A6</color>
+    <color name="text_normal">#5F6368</color>
+
+    <!-- 背景 / 卡片 -->
+    <color name="bg_page">#F2F4F7</color>
+    <color name="bg_left">#F7F8FA</color>
+    <color name="bg_card">#F5F6F8</color>
+    <color name="divider">#E4E7EB</color>
+
+    <color name="bg_article">#F5F5F5</color>
+
+    <!-- 分类标签配色池 -->
+    <color name="tag_teal">#4ECDC4</color>
+    <color name="tag_green">#66BB6A</color>
+    <color name="tag_orange">#FFA726</color>
+    <color name="tag_pink">#EF5350</color>
+    <color name="tag_purple">#AB47BC</color>
+    <color name="tag_blue">#42A5F5</color>
+    <color name="tag_gray">#78909C</color>
+</resources>
